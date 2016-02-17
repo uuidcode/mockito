@@ -1,5 +1,10 @@
 package com.github.uuidcode.mockito;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.nullValue;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.mockito.Mockito.when;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -8,6 +13,8 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
 public class Main {
+    public static final String NAME = "test";
+
     @Mock
     private Module mockModule;
 
@@ -16,12 +23,17 @@ public class Main {
 
     @Test
     public void test() {
-        mockModule.setName("test");
-        System.out.println(this.mockModule.getName());
+        mockModule.setName(NAME);
+        assertThat(mockModule.getName(), is(nullValue()));
 
-        spyModule.setName("test");
-        System.out.println(this.spyModule.getName());
+        when(this.mockModule.getName()).thenReturn(NAME);
+        assertThat(mockModule.getName(), is(NAME));
+
+        spyModule.setName(NAME);
+        assertThat(spyModule.getName(), is(NAME));
+
+        when(this.spyModule.getVersion()).thenReturn("1.0");
+        this.spyModule.setVersion("2.0");
+        assertThat(this.spyModule.getVersion(), is("1.0"));
     }
-
-
 }
