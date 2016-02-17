@@ -12,7 +12,7 @@ import org.mockito.Spy;
 import org.mockito.runners.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
-public class Main {
+public class Test1 {
     public static final String NAME = "test";
 
     @Mock
