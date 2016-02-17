@@ -20,7 +20,6 @@ public class Test2 {
     @InjectMocks
     private Project project;
 
-
     @Test
     public void test() {
         assertThat(this.project.getModule().getName(), is(nullValue()));
@@ -29,5 +28,4 @@ public class Test2 {
 
         assertThat(this.project.getModule().getName(), is(NAME));
     }
-
 }
