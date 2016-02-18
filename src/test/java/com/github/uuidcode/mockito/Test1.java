@@ -2,7 +2,7 @@ package com.github.uuidcode.mockito;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
 
 import org.junit.Test;
@@ -12,7 +12,7 @@ import org.mockito.Spy;
 import org.mockito.runners.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
-public class Main {
+public class Test1 {
     public static final String NAME = "test";
 
     @Mock
