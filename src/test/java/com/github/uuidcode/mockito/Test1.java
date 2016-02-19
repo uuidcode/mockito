@@ -13,7 +13,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
 public class Test1 {
-    public static final String NAME = "hello";
+    public static final String NAME = "name";
 
     @Mock
     private Module mockModule;
