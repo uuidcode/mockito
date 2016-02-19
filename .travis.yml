@@ -6,4 +6,4 @@ jdk:
 sudo: required
 
 after_success:
-  - mvn jacoco:report coveralls:report
+  - mvn clean jacoco:report coveralls:report

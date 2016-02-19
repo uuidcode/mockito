@@ -22,6 +22,10 @@ public class Test2 {
 
     @Test
     public void test() {
+        this.project.setData("data").setName("name");
+
+        assertThat(this.project.getData(), is("data"));
+        assertThat(this.project.getName(), is("name"));
         assertThat(this.project.getModule().getName(), is(nullValue()));
 
         this.module.setName(NAME);
